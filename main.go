@@ -36,6 +36,7 @@ func main() {
 
 	hasherArg := flag.String(`t`, `sha256`, `Checksum type (sha1, sha256, sha512, md5)`)
 	outputFileArg := flag.String(`o`, ``, `Output checksums to file <filename> instead of STDOUT`)
+	prefixWithArchiveArg := flag.Bool(`a`, false, `Add archive's file name as a directory name (as additional information)`)
 
 	flag.Usage = func() {
 		f := filepath.Base(os.Args[0])
@@ -158,9 +159,14 @@ func main() {
 			}
 		}
 
-		_, _ = fmt.Fprintf(outputter, "%x%s%s%c%+v\n",
-			hasher.Sum(nil), CHECKSUM_SEPARATOR, filenameBase, os.PathSeparator, name,
-		)
+		_, _ = fmt.Fprintf(outputter, "%x%s", hasher.Sum(nil), CHECKSUM_SEPARATOR)
+
+		if *prefixWithArchiveArg {
+			// Add filename as it were a directory
+			_, _ = fmt.Fprintf(outputter, "%s%c", filenameBase, os.PathSeparator)
+		}
+
+		_, _ = fmt.Fprintf(outputter, "%s\n", name)
 
 		return nil
 	})
