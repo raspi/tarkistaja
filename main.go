@@ -34,7 +34,7 @@ const (
 
 func main() {
 
-	hasherArg := flag.String(`t`, `sha256`, `Checksum type (sha1, sha256, sha512, md5)`)
+	hasherMethodArg := flag.String(`m`, `sha256`, `Checksum method (sha1, sha256, sha512, md5)`)
 	outputFileArg := flag.String(`o`, ``, `Output checksums to file <filename> instead of STDOUT`)
 	prefixWithArchiveArg := flag.Bool(`a`, false, `Add archive's file name as a directory name (as additional information)`)
 
@@ -59,7 +59,7 @@ func main() {
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "  List checksums to file:\n")
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -o checksums.sha256 important_files.zip\n", f)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "  List checksums using md5:\n")
-		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -t md5 important_files.zip\n", f)
+		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -m md5 important_files.zip\n", f)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "  Add archive file name as directory for additional information:\n")
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -a important_files.zip\n", f)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "\n")
@@ -90,7 +90,7 @@ func main() {
 	// Select hashing method
 	var hasher hash.Hash
 
-	switch *hasherArg {
+	switch *hasherMethodArg {
 	case `md5`:
 		hasher = md5.New()
 	case `sha1`:
@@ -100,7 +100,7 @@ func main() {
 	case `sha512`:
 		hasher = sha512.New()
 	default:
-		_, _ = fmt.Fprintf(os.Stderr, `invalid checksum format %#v`, *hasherArg)
+		_, _ = fmt.Fprintf(os.Stderr, `invalid checksum format %#v`, *hasherMethodArg)
 		os.Exit(1)
 	}
 
