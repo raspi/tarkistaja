@@ -9,10 +9,10 @@ List file checksums inside of compressed archive
 * Archives
   * Everything that [archiver](https://github.com/mholt/archiver) supports
 * Checksum methods
-  * sha1
-  * sha256
-  * sha512
-  * md5
+  * [sha1](https://en.wikipedia.org/wiki/SHA-1)
+  * [sha256](https://en.wikipedia.org/wiki/SHA-2)
+  * [sha512](https://en.wikipedia.org/wiki/SHA-2)
+  * [md5](https://en.wikipedia.org/wiki/MD5)
 
 # Examples
 
