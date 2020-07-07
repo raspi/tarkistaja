@@ -41,7 +41,7 @@ func main() {
 	flag.Usage = func() {
 		f := filepath.Base(os.Args[0])
 
-		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "tarkistaja v%v - (%v)\n", VERSION, BUILDDATE)
+		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "tarkistaja %v - (%v)\n", VERSION, BUILDDATE)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "(c) %v %v- [ %v ]\n", AUTHOR, YEAR, HOMEPAGE)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "List file checksums inside of compressed archive.\n")
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "\n")
