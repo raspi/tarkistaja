@@ -60,6 +60,8 @@ func main() {
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -o checksums.sha256 important_files.zip\n", f)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "  List checksums using md5:\n")
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -t md5 important_files.zip\n", f)
+		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "  Add archive file name as directory for additional information:\n")
+		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "    %v -a important_files.zip\n", f)
 		_, _ = fmt.Fprintf(flag.CommandLine.Output(), "\n")
 	}
 
