@@ -118,7 +118,6 @@ func main() {
 	}
 
 	err = w.Walk(filename, func(f archiver.File) error {
-
 		if f.IsDir() {
 			// Skip directories
 			return nil
