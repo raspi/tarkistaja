@@ -165,7 +165,7 @@ func main() {
 			_, _ = fmt.Fprintf(outputter, "%s%c", filenameBase, os.PathSeparator)
 		}
 
-		_, _ = fmt.Fprintf(outputter, "%s\n", name)
+		_, _ = fmt.Fprintf(outputter, "%s\n", filepath.Clean(name))
 
 		return nil
 	})
