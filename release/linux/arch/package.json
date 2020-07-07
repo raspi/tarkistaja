@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "ver": "v1.0.0"
+  },
+  "maintainer": "Pekka Järvinen",
+  "maintainer_email": "-",
+  "name": [
+    "tarkistaja"
+  ],
+  "version": "-<UPDATE>",
+  "release": 1,
+  "short_description": "List file checksums inside of compressed archive",
+  "licenses": [
+    "Apache 2.0"
+  ],
+  "url": "https://github.com/raspi/tarkistaja",
+  "pkg_url_prefix": "https://github.com/raspi/tarkistaja/releases/download/$pkgver/",
+  "files": {}
+}
