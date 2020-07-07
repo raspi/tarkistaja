@@ -1,5 +1,18 @@
+![GitHub All Releases](https://img.shields.io/github/downloads/raspi/tarkistaja/total?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/raspi/tarkistaja?style=for-the-badge)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/raspi/tarkistaja?style=for-the-badge)
+
 # tarkistaja
 List file checksums inside of compressed archive
+
+# Features
+* Archives
+  * Everything that [archiver](https://github.com/mholt/archiver) supports
+* Checksum methods
+  * sha1
+  * sha256
+  * sha512
+  * md5
 
 # Examples
 
@@ -7,7 +20,7 @@ List file checksums inside of compressed archive
     d41d8cd98f00b204e9800998ecf8427e empty.txt
     746308829575e17c3331bbcb00c0898b hello.txt
 
-Add archive file name as a directory:
+Add archive file name as a directory as additional information:
 
     % tarkistaja -m md5 -a test.zip
     d41d8cd98f00b204e9800998ecf8427e test.zip/empty.txt
@@ -50,6 +63,21 @@ Examples:
   Add archive file name as directory for additional information:
     tarkistaja -a important_files.zip
 ```
+
+# Requirements
+* Operating system
+  * GNU/Linux 
+    * x64 arm arm64 ppc64 ppc64le
+  * Microsoft Windows
+    * x64
+  * Darwin (Apple Mac)
+    * x64
+  * FreeBSD
+    * x64 arm
+  * NetBSD
+    * x64 arm
+  * OpenBSD
+    * x64 arm arm64
 
 # Get source
 
