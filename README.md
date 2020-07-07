@@ -82,6 +82,17 @@ Examples:
 # Get source
 
     git clone https://github.com/raspi/tarkistaja
+
+# Developing
+
+* Make changes
+* `make`
+* Create new version tag `vX.Y.Z` to VCS
+* `make release`
+
+Requirements:
+
+* upx for compressing binaries
     
 # License
 
