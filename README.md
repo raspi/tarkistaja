@@ -26,6 +26,29 @@ Write checksums to a file:
     
 # Usage
 ```
+tarkistaja v1.0.0 - (2020-07-07T19:38:16+03:00)
+(c) Pekka Järvinen 2020- [ https://github.com/raspi/tarkistaja ]
+List file checksums inside of compressed archive.
+
+  Usage:
+    tarkistaja [parameters] <compressed file>
+
+Parameters:
+  -a    Add archive's file name as a directory name (as additional information)
+  -m string
+        Checksum method (sha1, sha256, sha512, md5) (default "sha256")
+  -o string
+        Output checksums to file <filename> instead of STDOUT
+
+Examples:
+  List checksums:
+    tarkistaja important_files.zip
+  List checksums to file:
+    tarkistaja -o checksums.sha256 important_files.zip
+  List checksums using md5:
+    tarkistaja -m md5 important_files.zip
+  Add archive file name as directory for additional information:
+    tarkistaja -a important_files.zip
 ```
 
 # Get source
